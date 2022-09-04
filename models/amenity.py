@@ -10,5 +10,3 @@ class Amenity(BaseModel):
         name:str -name string
     """
     name = ""
-
-    

@@ -1,13 +1,20 @@
 #!/usr/bin/python3
 """Define simple command line interpter
-contains the entry point of the command interpreter
+contains the entry point of the command interprete
 """
 
 
+from ast import arg
 import json
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -15,7 +22,7 @@ class HBNBCommand(cmd.Cmd):
     inherits from cmd class
     """
     # contanins the list of classes used
-    __class_list: list = ["BaseModel"]
+    __class_list: list = ["BaseModel", "Place", "State", "User", "Amenity", "Review"]
 
     prompt: str = '(hbnb)'
 
@@ -24,12 +31,19 @@ class HBNBCommand(cmd.Cmd):
         return super().do_help(arg)
 
     def do_EOF(self, line):
-        """EOF command to exit the program"""
+        """EOF command to exit the program
+        usage: Ctrl + D"""
+        print()
         return True
 
     def do_quite(self, line):
         """Quit command to exit the program"""
         return True
+
+    def emptyline(self):
+        """Called when empty line + Enter
+        Override the dafault behaviour, execute the previous command, with "do nothing" """
+        pass
 
     def do_create(self, line):
         """Usage: create BaseModel
@@ -44,6 +58,18 @@ class HBNBCommand(cmd.Cmd):
         else:
             if args[0] == "BaseModel":
                 new_instance = BaseModel()
+            elif args[0] == "User":
+                new_instance = User()
+            elif args[0] == "State":
+                new_instance = State()
+            elif args[0] == "Amenity":
+                new_instance = Amenity()
+            elif args[0] == "City":
+                new_instance = City()
+            elif args[0] == "Place":
+                new_instance = Place()
+            elif arg[0] == "Review":
+                new_instance = Review()
             print(new_instance.id)
 
     def do_show(self, line):
@@ -136,4 +162,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
-

@@ -1,11 +1,12 @@
 """contains the definition of class Review"""
 
 
-from base_model import BaseModel
+from modles.base_model import BaseModel
 
 
 class Review(BaseModel):
     """Define Review
+
     Attributes:
         place_id:str -Place.id
         user_id:str - User.id
@@ -15,4 +16,3 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
     text = ""
-

@@ -1,7 +1,7 @@
 """contains the definition of class Place"""
 
 
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 
 class Place(BaseModel):
@@ -31,4 +31,3 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
-
