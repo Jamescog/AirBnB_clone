@@ -26,9 +26,9 @@ class HBNBCommand(cmd.Cmd):
 
     prompt: str = '(hbnb)'
 
-    def do_help(self, arg: str) -> bool | None:
+    def do_help(self,line):
         """help command that produce help on certain topic"""
-        return super().do_help(arg)
+        return super().do_help(line)
 
     def do_EOF(self, line):
         """EOF command to exit the program

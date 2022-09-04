@@ -1,7 +1,7 @@
 """contains the definition of class Review"""
 
 
-from modles.base_model import BaseModel
+from models.base_model import BaseModel
 
 
 class Review(BaseModel):
