@@ -1,0 +1,20 @@
+footer {
+<<<<<<< HEAD
+    background-color: #00FF00;
+    height: 60px; width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+=======
+    background-color: #00ff00;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    position:fixed;
+    justify-content: center;
+}
+>>>>>>> 3d76b011fc0392a79751aa191bf236dad38dbc28
